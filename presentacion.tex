@@ -1,0 +1,41 @@
+% Using https://www.overleaf.com/learn/latex/Beamer_Presentations%3A_A_Tutorial_for_Beginners_(Part_1)—Getting_Started
+
+\documentclass{beamer}
+\usetheme{default}
+\usecolortheme{dove}
+\usefonttheme{structurebold}
+
+\usepackage{graphicx}
+	\graphicspath{{img/}}
+\usepackage{transparent}
+\usepackage{tikz}
+    \usetikzlibrary{positioning}
+
+\title{Title Goes Here}
+\subtitle{Subtitle Goes Here}
+\author{Daniel Pedrosa Montes}
+\institute{Universidad de Granada}
+\date{\today}
+
+\setbeamertemplate{background}
+{
+	\begin{tikzpicture}[remember picture, overlay]
+		\transparent{0.1}
+		\node[anchor=west] at (current page.center){
+			\includegraphics[height=8cm,keepaspectratio]{ugr.png}
+		};
+	\end{tikzpicture}
+}
+
+\begin{document}
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Index}
+		\tableofcontents
+	\end{frame}
+
+	\input{}
+\end{document}
